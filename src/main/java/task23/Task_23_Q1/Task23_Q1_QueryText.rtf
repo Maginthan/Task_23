@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 #Query for creating a database and using the database
+\f1\b0 \
+create database employeeDatabase;\
+Use employeeDatabase;\
+\
+
+\f0\b #Query for creating a table inside the above created database
+\f1\b0 \
+create table employeeTable(empno int,ename varchar(25),job varchar(25),mgr int,hiredate DATE,sal DECIMAL(8,2),comm DECIMAL(8,2),deptno int);\
+\
+\
+
+\f0\b #Query for inserting data records into the above created table.
+\f1\b0 \
+insert into employeeTable values(8369,'SMITH','CLERK',8902,'1990-12-18',800,null,20),(8499,'ANYA','SALESMAN',8698,'1991-02-20',1600,300,30),(8521,'SETH','SALESMAN',8698,'1991-02-22',1250,500,30),(8566,'MAHADEVAN','MANAGER',8839,'1991-04-02',2985,null,20),(8654,'MOMIN','SALESMAN',8698,'1991-09-28',1250,1400,30),(8698,'BINA','MANAGER',8839,'1991-05-01',2850,null,30),(8882,'SHIVANSH','MANAGER',8839,'1991-06-09',2450,null,10),(8888,'SCOTT','ANALYST',8566,'1992-12-09',3000,null,20),(8839,'AMIR','PRESIDENT',null,'1991-11-18',5000,null,10),(8844,'KULDEEP','SALESMAN',8698,'1991-09-08',1500,0,30);\
+\
+
+\f0\b #Query for displaying all records in the table
+\f1\b0 \
+select * from employeeTable;\
+\
+
+\f0\b # A) Query to display EName and Sal of employees whose salary is greater than or equal to 2200
+\f1\b0 \
+select ename,sal from employeeTable where sal>=2200;\
+\
+
+\f0\b # B) Query to display details of employees who are not getting commission
+\f1\b0 \
+select * from employeeTable where comm is null;\
+\
+
+\f0\b # C) Query to display employee name and salary of employees who don't have salary in the range of 2500 to 4000
+\f1\b0 \
+select ename,sal from employeeTable where sal not between 2500 and 4000;\
+\
+
+\f0\b # D) Query to display name, job title and salary of employees who don't have a manager
+\f1\b0 \
+select ename,job,sal from employeeTable where mgr is null;\
+\
+
+\f0\b # E) Query to display the employee name whose name contains "A" as third alphabet
+\f1\b0 \
+select ename from employeeTable where ename like '__A%';\
+\
+
+\f0\b # F) Query to display the employee name whose name contains "T" as the last alphabet
+\f1\b0 \
+select ename from employeeTable where ename like '%T';}
